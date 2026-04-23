@@ -18,3 +18,7 @@ Una herramienta potente y minimalista para el análisis de redes y diseño de in
 
 ## Objetivo
 Optimizar la fase de diseño lógico de redes, minimizando errores en la asignación de IPs y mejorando la documentación técnica de proyectos de infraestructura.
+
+* Ingeniero a cargo: Jeferson Arbey Bravo Saenz
+* Institucion: Fundacion Universitaria Ucompensar
+* Fecha: 2026
