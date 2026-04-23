@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ################################################################################
-# SCRIPT MAESTRO DE ORQUESTACIÓN - DEPLOY COMPLETO DE RED
+# SCRIPT MAESTRO DE ORQUESTACIÓN - DEPLOY COMPLETO DE RED.
 # RedCalc Pro v2.2 - Automatización de Infraestructura de Red
 # 
 # Propósito: Orquestar la configuración completa de la infraestructura:
