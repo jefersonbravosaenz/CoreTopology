@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ################################################################################
-# SCRIPT DE CONFIGURACIÓN CISCO ROUTER 2 - SEDE 2
+# SCRIPT DE CONFIGURACIÓN CISCO ROUTER 2 - SEDE 2.
 # RedCalc Pro v2.2 - Automatización de Infraestructura de Red
 # 
 # Propósito: Configurar Router Cisco (Sede 2) con:

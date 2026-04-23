@@ -1,6 +1,6 @@
 # Configuración básica Switch Huawei (VRP)
 vlan 10
- description DATOS
+ description DATOS.
 #
 interface GigabitEthernet0/0/1
  port link-type access

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ################################################################################
-# SCRIPT DE CONFIGURACIÓN FORTINET FORTIGATE FIREWALL
+# SCRIPT DE CONFIGURACIÓN FORTINET FORTIGATE FIREWALL.
 # RedCalc Pro v2.2 - Automatización de Infraestructura de Red
 # 
 # Propósito: Configurar Fortinet FortiGate Firewall con:
