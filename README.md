@@ -10,7 +10,7 @@ Una herramienta potente y minimalista para el análisis de redes y diseño de in
 ## 📂 Estructura del Proyecto
 - **/client**: Interfaz gráfica para la visualización de topologías y cálculos de red.
 - **/scripts**: Configuraciones base (.sh) para el despliegue de switches core y segmentación de VLANs.
-- **equipos.csv**: Inventario normalizado con el direccionamiento IP y funciones de los activos de red del CEDI.
+- **equipos.csv**: Inventario normalizado con el direccionamiento IP y funciones de los activos de red.
 
 ## 🛠️ Tecnologías
 * Node.js, Git, Bash/Shell, React, TypeScript
