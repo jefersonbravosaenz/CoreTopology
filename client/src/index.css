@@ -1,0 +1,419 @@
+/* 
+ * RedCalc Pro - Design System
+ * Philosophy: "Corporate Precision" - Bauhaus-inspired corporate technical design
+ * Primary: Deep navy blue sidebar + light blue-gray workspace
+ * Accent: Technical orange for emphasis and alerts
+ * Typography: Plus Jakarta Sans (UI) + JetBrains Mono (technical data)
+ */
+
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  
+  /* Custom RedCalc tokens */
+  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+}
+
+:root {
+  /* Corporate Precision palette */
+  --radius: 0.5rem;
+  
+  /* Background: light blue-gray workspace */
+  --background: oklch(0.965 0.008 240);
+  --foreground: oklch(0.18 0.025 240);
+  
+  /* Cards: clean white */
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.025 240);
+  
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.025 240);
+  
+  /* Primary: corporate blue */
+  --primary: oklch(0.42 0.18 255);
+  --primary-foreground: oklch(0.98 0 0);
+  
+  /* Secondary: light blue-gray */
+  --secondary: oklch(0.93 0.012 240);
+  --secondary-foreground: oklch(0.3 0.02 240);
+  
+  /* Muted */
+  --muted: oklch(0.94 0.008 240);
+  --muted-foreground: oklch(0.52 0.02 240);
+  
+  /* Accent: technical orange */
+  --accent: oklch(0.65 0.19 45);
+  --accent-foreground: oklch(0.98 0 0);
+  
+  /* Destructive */
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0 0);
+  
+  /* Borders */
+  --border: oklch(0.88 0.012 240);
+  --input: oklch(0.88 0.012 240);
+  --ring: oklch(0.42 0.18 255);
+  
+  /* Charts */
+  --chart-1: oklch(0.42 0.18 255);
+  --chart-2: oklch(0.55 0.16 200);
+  --chart-3: oklch(0.65 0.19 45);
+  --chart-4: oklch(0.48 0.15 280);
+  --chart-5: oklch(0.55 0.18 160);
+  
+  /* Sidebar: deep navy */
+  --sidebar: oklch(0.22 0.055 255);
+  --sidebar-foreground: oklch(0.88 0.02 240);
+  --sidebar-primary: oklch(0.55 0.18 255);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
+  --sidebar-accent: oklch(0.28 0.05 255);
+  --sidebar-accent-foreground: oklch(0.92 0.02 240);
+  --sidebar-border: oklch(0.30 0.04 255);
+  --sidebar-ring: oklch(0.55 0.18 255);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+  }
+  
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  a[href],
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled) {
+    @apply cursor-pointer;
+  }
+}
+
+@layer components {
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      max-width: 1400px;
+    }
+  }
+  
+  /* RedCalc custom components */
+  .rc-card {
+    @apply bg-card rounded-lg border border-border shadow-sm;
+  }
+  
+  .rc-card-accent-blue {
+    @apply border-l-4 border-l-blue-600;
+  }
+  
+  .rc-card-accent-orange {
+    @apply border-l-4 border-l-orange-500;
+  }
+  
+  .rc-card-accent-green {
+    @apply border-l-4 border-l-green-600;
+  }
+  
+  .rc-card-accent-red {
+    @apply border-l-4 border-l-red-500;
+  }
+  
+  .rc-stat-number {
+    font-family: 'JetBrains Mono', monospace;
+    @apply text-2xl font-semibold tabular-nums;
+  }
+  
+  .rc-code-block {
+    font-family: 'JetBrains Mono', monospace;
+    @apply text-sm bg-slate-900 text-green-400 p-4 rounded-md overflow-auto;
+  }
+  
+  .rc-badge {
+    @apply inline-flex items-center px-2 py-0.5 rounded text-xs font-medium;
+  }
+  
+  .rc-table-row {
+    @apply border-b border-border hover:bg-muted/50 transition-colors;
+  }
+  
+  .utilization-bar {
+    @apply h-2 rounded-full bg-muted overflow-hidden;
+  }
+  
+  .utilization-fill {
+    @apply h-full rounded-full transition-all duration-500;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: oklch(0.75 0.01 240);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: oklch(0.6 0.02 240);
+}
+
+/* Smooth transitions */
+* {
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+button, [role="button"], a {
+  transition: all 0.2s ease;
+}
+
+input, textarea, select {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover effects */
+button:hover:not(:disabled),
+[role="button"]:hover:not([aria-disabled="true"]) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+button:active:not(:disabled),
+[role="button"]:active:not([aria-disabled="true"]) {
+  transform: translateY(0);
+}
+
+/* Focus ring animation */
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+  animation: pulse-glow 0.6s ease-out;
+}
+
+/* Animations */
+@keyframes slideInLeft {
+  from { transform: translateX(-20px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { transform: translateY(10px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes countUp {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.7); }
+  50% { box-shadow: 0 0 0 10px rgba(37, 99, 235, 0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes slide-in-right {
+  from { transform: translateX(100px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes scale-in {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes rotate-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes bounce-in {
+  0% { transform: scale(0.3); opacity: 0; }
+  50% { opacity: 1; }
+  70% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes neon-glow {
+  0%, 100% { text-shadow: 0 0 10px rgba(37, 99, 235, 0.5), 0 0 20px rgba(37, 99, 235, 0.3); }
+  50% { text-shadow: 0 0 20px rgba(37, 99, 235, 0.8), 0 0 30px rgba(37, 99, 235, 0.6); }
+}
+
+.animate-slide-in {
+  animation: slideInLeft 0.3s ease-out;
+}
+
+.animate-fade-up {
+  animation: fadeInUp 0.3s ease-out;
+}
+
+.animate-count {
+  animation: countUp 0.4s ease-out;
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  background-size: 1000px 100%;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.animate-scale-in {
+  animation: scale-in 0.3s ease-out;
+}
+
+.animate-spin {
+  animation: rotate-spin 2s linear infinite;
+}
+
+.animate-bounce-in {
+  animation: bounce-in 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.animate-gradient {
+  animation: gradient-shift 3s ease infinite;
+  background-size: 200% 200%;
+}
+
+.animate-neon {
+  animation: neon-glow 2s ease-in-out infinite;
+}
+
+/* Card entrance animations */
+.rc-card {
+  animation: scale-in 0.3s ease-out;
+}
+
+/* Stagger animation for lists */
+.rc-card:nth-child(1) { animation-delay: 0ms; }
+.rc-card:nth-child(2) { animation-delay: 50ms; }
+.rc-card:nth-child(3) { animation-delay: 100ms; }
+.rc-card:nth-child(4) { animation-delay: 150ms; }
+.rc-card:nth-child(5) { animation-delay: 200ms; }
+
+/* Table row animations */
+tbody tr {
+  animation: slide-in-right 0.4s ease-out;
+}
+
+tbody tr:nth-child(1) { animation-delay: 0ms; }
+tbody tr:nth-child(2) { animation-delay: 30ms; }
+tbody tr:nth-child(3) { animation-delay: 60ms; }
+tbody tr:nth-child(4) { animation-delay: 90ms; }
+tbody tr:nth-child(5) { animation-delay: 120ms; }
+
+/* Stat card pulse */
+.rc-stat-number {
+  animation: bounce-in 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Utilization bar animation */
+.utilization-fill {
+  animation: slide-in-right 0.8s ease-out;
+}
