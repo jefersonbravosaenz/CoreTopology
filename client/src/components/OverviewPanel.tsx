@@ -1,4 +1,4 @@
-// RedCalc Pro - Overview Dashboard Panel
+// CoreTopology - Overview Dashboard Panel
 // Design: Corporate Precision - Stats cards with animated counters
 
 import { useMemo } from 'react';

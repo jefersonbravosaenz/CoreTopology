@@ -1,4 +1,4 @@
-// RedCalc Pro - Animated Timeline Component
+// CoreTopology - Animated Timeline Component
 // Línea de tiempo con animaciones de entrada escalonadas
 
 import { ReactNode } from 'react';

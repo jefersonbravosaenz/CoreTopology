@@ -1,4 +1,4 @@
-// RedCalc Pro - Services Panel
+// CoreTopology - Services Panel
 // Design: Corporate Precision
 
 import { useNetwork } from '@/contexts/NetworkContext';

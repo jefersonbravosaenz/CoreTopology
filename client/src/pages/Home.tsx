@@ -1,4 +1,4 @@
-// RedCalc Pro - Main Application Page
+// CoreTopology - Main Application Page
 // Design: Corporate Precision - Bauhaus-inspired corporate technical design
 // Layout: Fixed sidebar (navy) + scrollable content area (light blue-gray)
 
@@ -81,7 +81,7 @@ export default function Home() {
         {/* Top bar */}
         <header className="flex-shrink-0 h-14 bg-card border-b border-border flex items-center justify-between px-6 shadow-sm">
           <div className="flex items-center gap-3">
-            <div className="text-sm text-muted-foreground">RedCalc Pro</div>
+            <div className="text-sm text-muted-foreground">CoreTopology</div>
             <span className="text-muted-foreground">/</span>
             <div className="text-sm font-semibold text-foreground capitalize">
               {activeTab.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())}

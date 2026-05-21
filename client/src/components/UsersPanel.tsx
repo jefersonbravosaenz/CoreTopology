@@ -1,4 +1,4 @@
-// RedCalc Pro - Users Panel
+// CoreTopology - Users Panel
 // Design: Corporate Precision
 
 import { useMemo } from 'react';

@@ -1,4 +1,4 @@
-// RedCalc Pro - Glass Morphism Card Component
+// CoreTopology - Glass Morphism Card Component
 // Tarjeta con efecto glassmorphism y animaciones
 
 import { ReactNode } from 'react';

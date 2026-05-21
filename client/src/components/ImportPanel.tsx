@@ -1,4 +1,4 @@
-// RedCalc Pro - Import Panel
+// CoreTopology - Import Panel
 // Design: Corporate Precision
 
 import { useState } from 'react';
@@ -22,7 +22,7 @@ export default function ImportPanel() {
       try {
         const data = JSON.parse(e.target?.result as string) as NetworkProposal;
         if (!data.sites || !data.vlans) {
-          setError('El archivo no tiene el formato correcto de propuesta RedCalc Pro');
+          setError('El archivo no tiene el formato correcto de propuesta CoreTopology');
           return;
         }
         setPreview(data);
@@ -137,7 +137,7 @@ export default function ImportPanel() {
       <div className="rc-card p-4 bg-blue-50/50 border-blue-200">
         <div className="text-sm text-blue-800">
           <p className="font-semibold mb-1">Formato de archivo esperado</p>
-          <p>El archivo debe ser un JSON exportado desde RedCalc Pro con la siguiente estructura:</p>
+          <p>El archivo debe ser un JSON exportado desde CoreTopology con la siguiente estructura:</p>
           <pre className="mt-2 text-xs bg-blue-100 p-2 rounded font-mono overflow-x-auto">
 {`{
   "name": "Nombre de la propuesta",

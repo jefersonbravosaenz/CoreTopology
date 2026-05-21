@@ -1,4 +1,4 @@
-// RedCalc Pro - Animated Status Indicator
+// CoreTopology - Animated Status Indicator
 // Muestra estado con animación de pulso
 
 import { ReactNode } from 'react';

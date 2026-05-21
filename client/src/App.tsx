@@ -1,4 +1,4 @@
-// RedCalc Pro - App Root
+// CoreTopology - App Root
 // Design: Corporate Precision - Light theme with navy sidebar
 
 import { Toaster } from "@/components/ui/sonner";

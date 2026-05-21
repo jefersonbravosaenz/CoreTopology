@@ -1,4 +1,4 @@
-// RedCalc Pro - QoS Panel (NEW)
+// CoreTopology - QoS Panel (NEW)
 // Design: Corporate Precision
 
 import { useNetwork } from '@/contexts/NetworkContext';

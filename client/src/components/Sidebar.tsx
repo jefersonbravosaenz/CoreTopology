@@ -1,4 +1,4 @@
-// RedCalc Pro - Sidebar Navigation
+// CoreTopology - Sidebar Navigation
 // Design: Corporate Precision - Deep navy sidebar with white text
 
 import { useState } from 'react';
@@ -93,7 +93,7 @@ export default function Sidebar({ activeTab, onTabChange, onSave, onExport }: Si
           </div>
           {!collapsed && (
             <div className="min-w-0">
-              <div className="font-bold text-white text-sm leading-tight">RedCalc Pro</div>
+              <div className="font-bold text-white text-sm leading-tight">CoreTopology</div>
               <div className="text-xs text-blue-300 truncate">Infraestructura de Red</div>
             </div>
           )}

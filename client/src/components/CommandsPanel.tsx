@@ -1,13 +1,15 @@
-// RedCalc Pro - Commands Panel
+// CoreTopology - Commands Panel
 // Design: Corporate Precision - Generador de comandos con comentarios
 
 import { useMemo, useState } from 'react';
 import { useNetwork } from '@/contexts/NetworkContext';
 import { calculateVLSM, generateCommands } from '@/lib/networkCalc';
-import { Terminal, Copy, Check, Info, AlertTriangle } from 'lucide-react';
+import { Terminal, Copy, Check, Info, AlertTriangle, Download, Zap, Wifi } from 'lucide-react';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Label } from '@/components/ui/label';
+import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
+import SerialConnection from './SerialConnection';
 
 const VENDORS = [
   { value: 'cisco', label: 'Cisco IOS' },
@@ -28,6 +30,7 @@ export default function CommandsPanel() {
   const [deviceType, setDeviceType] = useState<string>('switch');
   const [siteIndex, setSiteIndex] = useState<number>(0);
   const [copied, setCopied] = useState(false);
+  const [showSerialConnection, setShowSerialConnection] = useState(false);
 
   const ipResults = useMemo(() => calculateVLSM(sites, vlans, baseNetwork), [sites, vlans, baseNetwork]);
 
@@ -42,6 +45,48 @@ export default function CommandsPanel() {
       toast.success('Comandos copiados al portapapeles');
       setTimeout(() => setCopied(false), 2000);
     });
+  };
+
+  const handleExportTxt = () => {
+    const element = document.createElement('a');
+    const file = new Blob([commands], { type: 'text/plain' });
+    element.href = URL.createObjectURL(file);
+    element.download = `coretopology-${vendor}-${deviceType}-${sites[siteIndex]?.name}.txt`;
+    document.body.appendChild(element);
+    element.click();
+    document.body.removeChild(element);
+    toast.success('Archivo .txt descargado');
+  };
+
+  const handleExportSh = () => {
+    const shContent = `#!/bin/bash
+# CoreTopology - Script de Configuración Automática
+# Vendor: ${VENDORS.find(v => v.value === vendor)?.label}
+# Dispositivo: ${DEVICE_TYPES.find(d => d.value === deviceType)?.label}
+# Sede: ${sites[siteIndex]?.name}
+# Generado: ${new Date().toLocaleString()}
+
+set -e
+
+echo "Iniciando configuración..."
+
+${commands.split('\n').map(line => {
+      if (line.trim().startsWith('!') || line.trim().startsWith('#')) {
+        return `# ${line.trim()}`;
+      }
+      return `echo "${line.replace(/"/g, '\\"')}" | telnet $1`;
+    }).join('\n')}
+
+echo "Configuración completada"
+`;
+    const element = document.createElement('a');
+    const file = new Blob([shContent], { type: 'text/plain' });
+    element.href = URL.createObjectURL(file);
+    element.download = `coretopology-${vendor}-${deviceType}-${sites[siteIndex]?.name}.sh`;
+    document.body.appendChild(element);
+    element.click();
+    document.body.removeChild(element);
+    toast.success('Script .sh descargado');
   };
 
   return (
@@ -107,22 +152,40 @@ export default function CommandsPanel() {
               {VENDORS.find(v => v.value === vendor)?.label} — {DEVICE_TYPES.find(d => d.value === deviceType)?.label} — {sites[siteIndex]?.name}
             </span>
           </div>
-          <button
-            onClick={handleCopy}
-            className="flex items-center gap-1.5 text-xs bg-slate-700 hover:bg-slate-600 px-3 py-1.5 rounded transition-colors"
-          >
-            {copied ? (
-              <>
-                <Check className="w-3.5 h-3.5 text-green-400" />
-                <span className="text-green-400">Copiado</span>
-              </>
-            ) : (
-              <>
-                <Copy className="w-3.5 h-3.5" />
-                Copiar
-              </>
-            )}
-          </button>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={handleCopy}
+              className="flex items-center gap-1.5 text-xs bg-slate-700 hover:bg-slate-600 px-3 py-1.5 rounded transition-colors"
+            >
+              {copied ? (
+                <>
+                  <Check className="w-3.5 h-3.5 text-green-400" />
+                  <span className="text-green-400">Copiado</span>
+                </>
+              ) : (
+                <>
+                  <Copy className="w-3.5 h-3.5" />
+                  Copiar
+                </>
+              )}
+            </button>
+            <button
+              onClick={handleExportTxt}
+              className="flex items-center gap-1.5 text-xs bg-blue-700 hover:bg-blue-600 px-3 py-1.5 rounded transition-colors"
+              title="Descargar como archivo .txt"
+            >
+              <Download className="w-3.5 h-3.5" />
+              .txt
+            </button>
+            <button
+              onClick={handleExportSh}
+              className="flex items-center gap-1.5 text-xs bg-green-700 hover:bg-green-600 px-3 py-1.5 rounded transition-colors"
+              title="Descargar como script .sh"
+            >
+              <Download className="w-3.5 h-3.5" />
+              .sh
+            </button>
+          </div>
         </div>
         <pre className="rc-code-block rounded-none text-xs overflow-x-auto max-h-[600px] bg-slate-900 text-slate-100">
           <code>{commands}</code>
@@ -152,6 +215,33 @@ export default function CommandsPanel() {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Serial Connection Section */}
+      <div className="rc-card p-5 bg-gradient-to-r from-indigo-50 to-blue-50 border border-indigo-200 animate-scale-in">
+        <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center gap-3">
+            <div className="p-2 bg-indigo-600 text-white rounded-lg">
+              <Zap className="w-5 h-5" />
+            </div>
+            <div>
+              <h3 className="font-semibold text-foreground">Conexión Serial Directa</h3>
+              <p className="text-sm text-muted-foreground">Conecta y ejecuta comandos automáticamente en tus equipos</p>
+            </div>
+          </div>
+          <Button
+            onClick={() => setShowSerialConnection(!showSerialConnection)}
+            variant="default"
+            size="sm"
+            className="gap-2"
+          >
+            <Wifi className="w-4 h-4" />
+            {showSerialConnection ? 'Ocultar' : 'Conectar'}
+          </Button>
+        </div>
+        {showSerialConnection && (
+          <SerialConnection commands={commands} vendor={vendor} deviceType={deviceType} />
+        )}
       </div>
 
       {/* Vendor-specific notes */}

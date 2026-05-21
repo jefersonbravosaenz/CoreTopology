@@ -1,4 +1,4 @@
-# Ideas de Diseño - RedCalc Pro
+# Ideas de Diseño - CoreTopology
 
 ## Concepto General
 Calculadora avanzada de infraestructura de red empresarial con diseño de alta calidad tipo "Network Operations Center".

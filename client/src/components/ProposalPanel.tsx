@@ -1,4 +1,4 @@
-// RedCalc Pro - Proposal Configuration Panel
+// CoreTopology - Proposal Configuration Panel
 // Design: Corporate Precision
 
 import { useNetwork } from '@/contexts/NetworkContext';

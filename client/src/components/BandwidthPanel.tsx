@@ -1,4 +1,4 @@
-// RedCalc Pro - Bandwidth Panel
+// CoreTopology - Bandwidth Panel
 // Design: Corporate Precision
 
 import { useMemo } from 'react';

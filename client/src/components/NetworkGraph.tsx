@@ -1,4 +1,4 @@
-// RedCalc Pro - Animated Network Graph Component
+// CoreTopology - Animated Network Graph Component
 // Visualiza la topología de red con animaciones de entrada
 
 import { useEffect, useRef, useState } from 'react';

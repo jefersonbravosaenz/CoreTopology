@@ -1,4 +1,4 @@
-// RedCalc Pro - Network Infrastructure Types
+// CoreTopology - Network Infrastructure Types
 // Design: Corporate Precision - Bauhaus-inspired technical design
 
 export interface Site {

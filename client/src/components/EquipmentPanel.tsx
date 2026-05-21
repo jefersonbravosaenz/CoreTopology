@@ -1,4 +1,4 @@
-// RedCalc Pro - Equipment Panel
+// CoreTopology - Equipment Panel
 // Design: Corporate Precision
 
 import { useMemo } from 'react';

@@ -1,4 +1,4 @@
-// RedCalc Pro - VLAN Panel
+// CoreTopology - VLAN Panel
 // Design: Corporate Precision
 
 import { useState } from 'react';

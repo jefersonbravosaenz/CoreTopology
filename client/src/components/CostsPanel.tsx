@@ -1,4 +1,4 @@
-// RedCalc Pro - Costs Panel (NEW)
+// CoreTopology - Costs Panel (NEW)
 // Design: Corporate Precision
 
 import { useMemo } from 'react';

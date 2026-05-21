@@ -1,4 +1,4 @@
-// RedCalc Pro - Animated Progress Bar Component
+// CoreTopology - Animated Progress Bar Component
 // Barra de progreso con animaciones fluidas
 
 import { useEffect, useState } from 'react';

@@ -1,4 +1,4 @@
-// RedCalc Pro - Floating Notification Component
+// CoreTopology - Floating Notification Component
 // Notificación con animación de entrada y salida
 
 import { useEffect, useState } from 'react';

@@ -1,4 +1,4 @@
-// RedCalc Pro - 3D Hover Card Component
+// CoreTopology - 3D Hover Card Component
 // Tarjeta con efecto 3D al pasar el mouse
 
 import { ReactNode, useRef, useState } from 'react';

@@ -1,4 +1,4 @@
-// RedCalc Pro - Topology Panel with SVG Diagram
+// CoreTopology - Topology Panel with SVG Diagram
 // Design: Corporate Precision
 
 import { useMemo, useState } from 'react';

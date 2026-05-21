@@ -1,4 +1,4 @@
-// RedCalc Pro - Animated Counter Component
+// CoreTopology - Animated Counter Component
 // Animates numbers from 0 to target value
 
 import { useEffect, useRef, useState } from 'react';

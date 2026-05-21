@@ -1,4 +1,4 @@
-// RedCalc Pro - Animated Circle Chart Component
+// CoreTopology - Animated Circle Chart Component
 // Gráfico circular con animación de entrada
 
 import { useEffect, useRef, useState } from 'react';

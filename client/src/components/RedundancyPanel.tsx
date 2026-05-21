@@ -1,4 +1,4 @@
-// RedCalc Pro - Redundancy Analysis Panel (NEW)
+// CoreTopology - Redundancy Analysis Panel (NEW)
 // Design: Corporate Precision
 
 import { useMemo } from 'react';

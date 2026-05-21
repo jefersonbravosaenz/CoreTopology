@@ -1,4 +1,4 @@
-// RedCalc Pro - Animated Bar Chart Component
+// CoreTopology - Animated Bar Chart Component
 // Barras que se animan al cargar
 
 import { useEffect, useRef, useState } from 'react';

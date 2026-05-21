@@ -1,4 +1,4 @@
-// RedCalc Pro - Proposals Management Panel
+// CoreTopology - Proposals Management Panel
 // Design: Corporate Precision
 
 import { useNetwork } from '@/contexts/NetworkContext';

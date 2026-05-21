@@ -1,4 +1,4 @@
-// RedCalc Pro - Floors Panel
+// CoreTopology - Floors Panel
 // Design: Corporate Precision
 
 import { useMemo } from 'react';

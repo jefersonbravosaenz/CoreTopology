@@ -1,4 +1,4 @@
-// RedCalc Pro - Network Calculation Engine
+// CoreTopology - Network Calculation Engine
 // Handles VLSM, bandwidth, equipment, costs, redundancy, QoS
 
 import type {
@@ -799,7 +799,7 @@ function generateFortinetConfig(vlans: VLAN[], site?: SiteIPResult, deviceType =
   const lines: string[] = [
     '# ===== CONFIGURACIÓN FORTINET FORTIGATE FIREWALL =====',
     `# Sede: ${site?.siteName || 'N/A'} | Bloque: ${site?.siteBlock || 'N/A'}`,
-    '# Generado automáticamente por RedCalc Pro v2.1',
+    '# Generado automáticamente por CoreTopology v2.1',
     '# Sintaxis: FortiOS CLI',
     '',
     '# ── CONFIGURACIÓN DE INTERFACES ──',

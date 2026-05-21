@@ -1,4 +1,4 @@
-// RedCalc Pro - Network State Context
+// CoreTopology - Network State Context
 import React, { createContext, useContext, useState, useCallback, useEffect } from 'react';
 import { nanoid } from 'nanoid';
 import type { Site, VLAN, ServiceConfig, NetworkProposal } from '@/lib/networkTypes';
@@ -36,7 +36,7 @@ interface NetworkContextType extends NetworkState {
 
 const NetworkContext = createContext<NetworkContextType | null>(null);
 
-const STORAGE_KEY = 'redcalc_proposals';
+const STORAGE_KEY = 'coretopology_proposals';
 
 function loadFromStorage(): NetworkProposal[] {
   try {

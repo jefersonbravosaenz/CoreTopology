@@ -1,4 +1,4 @@
-// RedCalc Pro - IP Addressing (VLSM) Panel
+// CoreTopology - IP Addressing (VLSM) Panel
 // Design: Corporate Precision
 
 import { useMemo } from 'react';
