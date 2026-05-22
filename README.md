@@ -1,6 +1,7 @@
 # CoreTopology
 
 Una herramienta potente y minimalista para el análisis de redes y diseño de infraestructura.
+Enlace: https://redcalcpro-azgkyhp8.manus.space
 
 ## Características principales
 * **Cálculo de Subredes:** Segmentación rápida mediante CIDR y máscaras personalizadas.
